@@ -11,3 +11,7 @@ def get_char_counts(text):
         except:
             char_counts[char_.lower()] = 1
     return char_counts
+
+def sort_counts(char_counts):
+    char_counts = {char: count for char, count in char_counts.items() if char.isalpha()}
+    return dict(sorted(char_counts.items(), reverse=True, key=lambda item: item[1]))
